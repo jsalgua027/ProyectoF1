@@ -14,7 +14,7 @@ import java.util.Objects;
 public class Piloto {
 
     private String nombrePiloto;
-    private Equipo equipo;
+
     private LocalDate fechaNacimiento;
     private int titulos;
     private int victorias;
@@ -24,14 +24,10 @@ public class Piloto {
 
     public Piloto() {
     }
-    
-    
-    
-    
 
-    public Piloto(String nombrePiloto, Equipo equipo, LocalDate fechaNacimiento, int titulos, int victorias, int GrandesPremiosDisputados, int poles, int vueltasRapidas) {
+    public Piloto(String nombrePiloto, LocalDate fechaNacimiento, int titulos, int victorias, int GrandesPremiosDisputados, int poles, int vueltasRapidas) {
         this.nombrePiloto = nombrePiloto;
-        this.equipo = equipo;
+
         this.fechaNacimiento = fechaNacimiento;
         this.titulos = titulos;
         this.victorias = victorias;
@@ -46,14 +42,6 @@ public class Piloto {
 
     public void setNombrePiloto(String nombrePiloto) {
         this.nombrePiloto = nombrePiloto;
-    }
-
-    public Equipo getEquipo() {
-        return equipo;
-    }
-
-    public void setEquipo(Equipo equipo) {
-        this.equipo = equipo;
     }
 
     public LocalDate getFechaNacimiento() {
@@ -106,32 +94,33 @@ public class Piloto {
 
     @Override
     public String toString() {
-        
-        String resultado="""
+
+        String resultado = """
+                                     *********Piloto**************** 
+                         
                                      -Nombre: %s
-                                     -Equipo:  %s
                                      -Fecha de Nacimiento: %s
                                      -Títulos: %s
                                      -Número de Victorias: %s
                                      -Grandes Premios disputdos: %s
                                      -Poles: %s
                                      -Vueltas Rapidas: %s
-                                   """.formatted(nombrePiloto,equipo,fechaNacimiento,titulos,victorias,GrandesPremiosDisputados,poles,vueltasRapidas);
-        
-        
+                         
+                                     **********************************
+                                   """.formatted(nombrePiloto, fechaNacimiento, titulos, victorias, GrandesPremiosDisputados, poles, vueltasRapidas);
+
         //return "Piloto{" + "nombrePiloto=" + nombrePiloto + ", equipo=" + equipo + ", fechaNacimiento=" + fechaNacimiento + 
         //", titulos=" + titulos + ", victorias=" + victorias + ", GrandesPremiosDisputados=" + GrandesPremiosDisputados +
         //", poles=" + poles + ", vueltasRapidas=" + vueltasRapidas + '}';
-        
         return resultado;
-        
+
     }
 
     @Override
     public int hashCode() {
         int hash = 3;
         hash = 43 * hash + Objects.hashCode(this.nombrePiloto);
-        hash = 43 * hash + Objects.hashCode(this.equipo);
+
         hash = 43 * hash + Objects.hashCode(this.fechaNacimiento);
         hash = 43 * hash + this.titulos;
         hash = 43 * hash + this.victorias;
@@ -156,7 +145,4 @@ public class Piloto {
         return Objects.equals(this.nombrePiloto, other.nombrePiloto);
     }
 
-    
-    
-    
 }

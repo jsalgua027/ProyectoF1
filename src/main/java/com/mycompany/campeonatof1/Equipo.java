@@ -4,6 +4,7 @@
  */
 package com.mycompany.campeonatof1;
 
+import java.util.Arrays;
 import java.util.Objects;
 
 /**
@@ -11,12 +12,10 @@ import java.util.Objects;
  * @author Windows10
  */
 public class Equipo {
-    
+
     private String nombreEquipo;
-    private Motor motor;
-    private Chasis chasis;
-    private Piloto pilotoUno;
-    private Piloto pilotoDos;
+    private Monoplaza[] monoplazas;
+    private Piloto[] pilotos;
     private String jefeEquipo;
     private int titulos;
     private int victorias;
@@ -27,12 +26,10 @@ public class Equipo {
     public Equipo() {
     }
 
-    public Equipo(String nombreEquipo, Motor motor, Chasis chasis, Piloto pilotoUno, Piloto pilotoDos, String jefeEquipo, int titulos, int victorias, int GrandesPremiosDisputados, int poles, int vueltasRapidas) {
+    public Equipo(String nombreEquipo, Monoplaza[] monoplazas, Piloto[] pilotos, String jefeEquipo, int titulos, int victorias, int GrandesPremiosDisputados, int poles, int vueltasRapidas) {
         this.nombreEquipo = nombreEquipo;
-        this.motor = motor;
-        this.chasis = chasis;
-        this.pilotoUno = pilotoUno;
-        this.pilotoDos = pilotoDos;
+        this.monoplazas = monoplazas;
+        this.pilotos = pilotos;
         this.jefeEquipo = jefeEquipo;
         this.titulos = titulos;
         this.victorias = victorias;
@@ -41,9 +38,6 @@ public class Equipo {
         this.vueltasRapidas = vueltasRapidas;
     }
 
-    
-    
-    
     public String getNombreEquipo() {
         return nombreEquipo;
     }
@@ -52,36 +46,20 @@ public class Equipo {
         this.nombreEquipo = nombreEquipo;
     }
 
-    public Motor getMotor() {
-        return motor;
+    public Monoplaza[] getMonoplazas() {
+        return monoplazas;
     }
 
-    public void setMotor(Motor motor) {
-        this.motor = motor;
+    public void setMonoplazas(Monoplaza[] monoplazas) {
+        this.monoplazas = monoplazas;
     }
 
-    public Chasis getChasis() {
-        return chasis;
+    public Piloto[] getPilotos() {
+        return pilotos;
     }
 
-    public void setChasis(Chasis chasis) {
-        this.chasis = chasis;
-    }
-
-    public Piloto getPilotoUno() {
-        return pilotoUno;
-    }
-
-    public void setPilotoUno(Piloto pilotoUno) {
-        this.pilotoUno = pilotoUno;
-    }
-
-    public Piloto getPilotoDos() {
-        return pilotoDos;
-    }
-
-    public void setPilotoDos(Piloto pilotoDos) {
-        this.pilotoDos = pilotoDos;
+    public void setPilotos(Piloto[] pilotos) {
+        this.pilotos = pilotos;
     }
 
     public String getJefeEquipo() {
@@ -132,46 +110,56 @@ public class Equipo {
         this.vueltasRapidas = vueltasRapidas;
     }
 
+    
+    
+   
     @Override
     public String toString() {
         
-        String resultado=
-                                   """
+        
+         String resultado
+                = """
+                                *********Equipo***********
+                  
                                    -Nombre Equipo: %s
-                                   -Motor: %s
-                                   -Chasis: %s
-                                   -Primer Piloto: %s
-                                   -Segundo Piloto: %s
+                                   -Monoplazas: %s
+                                   -Pilotos: %s
                                    -Jefe de Equipo: %s
                                    -Titulos: %s
                                    -Victorias en Grandes Premios: %s
                                    -Poles: %s
                                    -Vueltas Rapidas: %s
-                                   """.formatted(nombreEquipo,motor,chasis,pilotoUno,pilotoDos,
-                                           jefeEquipo,titulos,victorias,GrandesPremiosDisputados,poles,vueltasRapidas);
+                  
+                                   *****************************
+                                   """.formatted(nombreEquipo,monoplazas,pilotos,
+                                           jefeEquipo, titulos,victorias,GrandesPremiosDisputados,
+                                           poles,vueltasRapidas);
+        
+        
         
         
         return resultado;
-//        return "Equipo{" + "nombreEquipo=" + nombreEquipo + ", motor=" + motor + ", chasis="
-//                + chasis + ", pilotoUno=" + pilotoUno + ", pilotoDos=" + pilotoDos + ", jefeEquipo=" + jefeEquipo
-//                + ", titulos=" + titulos + ", victorias=" + victorias + ", GrandesPremiosDisputados=" 
-//                + GrandesPremiosDisputados + ", poles=" + poles + ", vueltasRapidas=" + vueltasRapidas + '}';
+        
+        
+//        return "Equipo{" + "nombreEquipo=" + nombreEquipo + ", monoplazas=" +
+//                monoplazas + ", pilotos=" + pilotos + ", jefeEquipo=" 
+//                + jefeEquipo + ", titulos=" + titulos + ", victorias=" + victorias
+//                + ", GrandesPremiosDisputados=" + GrandesPremiosDisputados 
+//                + ", poles=" + poles + ", vueltasRapidas=" + vueltasRapidas + '}';
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 71 * hash + Objects.hashCode(this.nombreEquipo);
-        hash = 71 * hash + Objects.hashCode(this.motor);
-        hash = 71 * hash + Objects.hashCode(this.chasis);
-        hash = 71 * hash + Objects.hashCode(this.pilotoUno);
-        hash = 71 * hash + Objects.hashCode(this.pilotoDos);
-        hash = 71 * hash + Objects.hashCode(this.jefeEquipo);
-        hash = 71 * hash + this.titulos;
-        hash = 71 * hash + this.victorias;
-        hash = 71 * hash + this.GrandesPremiosDisputados;
-        hash = 71 * hash + this.poles;
-        hash = 71 * hash + this.vueltasRapidas;
+        int hash = 5;
+        hash = 89 * hash + Objects.hashCode(this.nombreEquipo);
+        hash = 89 * hash + Arrays.deepHashCode(this.monoplazas);
+        hash = 89 * hash + Arrays.deepHashCode(this.pilotos);
+        hash = 89 * hash + Objects.hashCode(this.jefeEquipo);
+        hash = 89 * hash + this.titulos;
+        hash = 89 * hash + this.victorias;
+        hash = 89 * hash + this.GrandesPremiosDisputados;
+        hash = 89 * hash + this.poles;
+        hash = 89 * hash + this.vueltasRapidas;
         return hash;
     }
 
@@ -195,8 +183,6 @@ public class Equipo {
     
     
     
-    
-    
-    
-    
-}
+    }
+
+
