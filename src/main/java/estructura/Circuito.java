@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.campeonatof1;
+package estructura;
 
 import java.time.Year;
 import java.util.Objects;
@@ -11,7 +11,7 @@ import java.util.Objects;
  *
  * @author Windows10
  */
-public class GranPremio {
+public class Circuito {
     
     private String nombreGP;
     private Year anioDebut;
@@ -19,7 +19,7 @@ public class GranPremio {
     private double longitud;
     private int zonasDRS;
 
-    public GranPremio(String nombreGP, Year anioDebut, String vueltas, double longitud, int zonasDRS) {
+    public Circuito(String nombreGP, Year anioDebut, String vueltas, double longitud, int zonasDRS) {
         this.nombreGP = nombreGP;
         this.anioDebut = anioDebut;
         this.vueltas = vueltas;
@@ -70,10 +70,22 @@ public class GranPremio {
     @Override
     public String toString() {
         
+         String resultado= """
+                                        *********Circuito*******
+                           
+                                        -Nombre: %s
+                                        -Año de debut: %s
+                                        -Número de vueltas: %s
+                                        -Longitud: %s
+                                        -Zonas DRS: %s
+                                        
+                                        *************************
+                                     """.formatted(nombreGP,anioDebut,vueltas,longitud,zonasDRS);
         
-        
-        
-        return "GranPremio{" + "nombreGP=" + nombreGP + ", anioDebut=" + anioDebut + ", vueltas=" + vueltas + ", longitud=" + longitud + ", zonasDRS=" + zonasDRS + '}';
+        return  resultado;
+//        return "GranPremio{" + "nombreGP=" + nombreGP +
+//                ", anioDebut=" + anioDebut + ", vueltas=" + vueltas + ", longitud=" 
+//                + longitud + ", zonasDRS=" + zonasDRS + '}';
     }
 
     @Override
@@ -98,7 +110,7 @@ public class GranPremio {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final GranPremio other = (GranPremio) obj;
+        final Circuito other = (Circuito) obj;
         return Objects.equals(this.nombreGP, other.nombreGP);
     }
     
