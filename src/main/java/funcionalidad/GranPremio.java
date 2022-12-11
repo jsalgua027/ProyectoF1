@@ -79,7 +79,11 @@ public class GranPremio {
     }
     
     
+    //*********************************METODOS*************************
     
+    // método que señale el ganador y sume victoria a equipo y  piloto
+    // metodo que señale pole y le sume pole al equipo y piloto
+    // método que señale vuelta rápida y se la sume a los dos
     
     
     
