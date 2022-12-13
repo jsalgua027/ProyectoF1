@@ -125,35 +125,35 @@ public class Equipo {
     public String toString() {
         
         
-         String resultado
-                = """
-                                *********Equipo***********
-                  
-                                   -Nombre Equipo: %s
-                                   -Monoplazas: %s
-                                   -Pilotos: %s
-                                   -Jefe de Equipo: %s
-                                   -Titulos: %s
-                                   -Victorias en Grandes Premios: %s
-                                   -Poles: %s
-                                   -Vueltas Rapidas: %s
-                  
-                                   *****************************
-                                   """.formatted(nombreEquipo,monoplazas,pilotos,
-                                           jefeEquipo, titulos,victorias,grandesPremiosDisputados,
-                                           poles,vueltasRapidas);
+//         String resultado
+//                = """
+//                                *********Equipo***********
+//                  
+//                                   -Nombre Equipo: %s
+//                                   -Monoplazas: %s
+//                                   -Pilotos: %s
+//                                   -Jefe de Equipo: %s
+//                                   -Titulos: %s
+//                                   -Victorias en Grandes Premios: %s
+//                                   -Poles: %s
+//                                   -Vueltas Rapidas: %s
+//                  
+//                                   *****************************
+//                                   """.formatted(nombreEquipo,monoplazas,pilotos,
+//                                           jefeEquipo, titulos,victorias,grandesPremiosDisputados,
+//                                           poles,vueltasRapidas);
+//        
+//        
+//        
+//        
+//        return resultado;
         
         
-        
-        
-        return resultado;
-        
-        
-//        return "Equipo{" + "nombreEquipo=" + nombreEquipo + ", monoplazas=" +
-//                monoplazas + ", pilotos=" + pilotos + ", jefeEquipo=" 
-//                + jefeEquipo + ", titulos=" + titulos + ", victorias=" + victorias
-//                + ", grandesPremiosDisputados=" + grandesPremiosDisputados 
-//                + ", poles=" + poles + ", vueltasRapidas=" + vueltasRapidas + '}';
+        return "Equipo{" + "nombreEquipo=" + nombreEquipo + ", monoplazas=" +
+                monoplazas.toString() + ", pilotos=" + pilotos.toString() + ", jefeEquipo=" 
+                + jefeEquipo + ", titulos=" + titulos + ", victorias=" + victorias
+                + ", grandesPremiosDisputados=" + grandesPremiosDisputados 
+                + ", poles=" + poles + ", vueltasRapidas=" + vueltasRapidas + '}';
     }
 
     @Override
