@@ -19,13 +19,18 @@ public class Pruebas {
     public static void main(String[] args) {
       
 //       Equipo alpine = new Equipo();
-//          Piloto fernando =new Piloto("Fernado Alonso", alpine,LocalDate.of(1981, Month.JULY, 29), 2, 32, 356, 22,23);
-//           Piloto ocon = new Piloto("Esteban Ocon", alpine, LocalDate.of(1996, Month.SEPTEMBER, 17),0, 0, 111, 0, 0);
+          Piloto fernando =new Piloto("Fernado Alonso",LocalDate.of(1981, Month.JULY, 29), 2, 32, 356, 22,23);
+           Piloto ocon = new Piloto("Esteban Ocon", LocalDate.of(1996, Month.SEPTEMBER, 17),0, 0, 111, 0, 0);
 //           Equipo alpine1 = new Equipo("Alpine F1 Tea,", Motor.RENAULT, Chasis.A522, fernando, ocon, "Davide Brivio", 0, 0, 44, 0, 0);
 //          
         // System.out.println( fernando.toString());
 //          System.out.println(alpine1);
-                
+        Piloto [] pilotos ={fernando,ocon};
+         
+        Equipo alpine = new Equipo("alpine", 2, pilotos, "Eric baser", 0, 0, 0, 0, 0);
+        
+        System.out.println(alpine);
+        
     }
     
 }

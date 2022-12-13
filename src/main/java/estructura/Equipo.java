@@ -26,9 +26,9 @@ public class Equipo {
     public Equipo() {
     }
 
-    public Equipo(String nombreEquipo, Monoplaza[] monoplazas, Piloto[] pilotos, String jefeEquipo, int titulos, int victorias, int GrandesPremiosDisputados, int poles, int vueltasRapidas) {
+    public Equipo(String nombreEquipo, int tamanioMonoplazas, Piloto[] pilotos, String jefeEquipo, int titulos, int victorias, int GrandesPremiosDisputados, int poles, int vueltasRapidas) {
         this.nombreEquipo = nombreEquipo;
-        this.monoplazas = monoplazas;
+        this.monoplazas = crearArrayMonoplazas(tamanioMonoplazas);
         this.pilotos = pilotos;
         this.jefeEquipo = jefeEquipo;
         this.titulos = titulos;
@@ -110,6 +110,14 @@ public class Equipo {
         this.vueltasRapidas = vueltasRapidas;
     }
 
+   // metodo para crear el array de monoplazas
+    public Monoplaza[] crearArrayMonoplazas  (int tamanio ){
+     this.monoplazas= new Monoplaza[tamanio];
+        for (int i = 0; i < monoplazas.length; i++) {
+            this.monoplazas[i]=new Monoplaza();
+        }
+        return this.monoplazas;
+    }
     
     
    
