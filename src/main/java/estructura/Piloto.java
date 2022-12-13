@@ -18,7 +18,7 @@ public class Piloto {
     private LocalDate fechaNacimiento;
     private int titulos;
     private int victorias;
-    private int GrandesPremiosDisputados;
+    private int grandesPremiosDisputados;
     private int poles;
     private int vueltasRapidas;
 
@@ -31,7 +31,7 @@ public class Piloto {
         this.fechaNacimiento = fechaNacimiento;
         this.titulos = titulos;
         this.victorias = victorias;
-        this.GrandesPremiosDisputados = GrandesPremiosDisputados;
+        this.grandesPremiosDisputados = GrandesPremiosDisputados;
         this.poles = poles;
         this.vueltasRapidas = vueltasRapidas;
     }
@@ -69,11 +69,11 @@ public class Piloto {
     }
 
     public int getGrandesPremiosDisputados() {
-        return GrandesPremiosDisputados;
+        return grandesPremiosDisputados;
     }
 
     public void setGrandesPremiosDisputados(int GrandesPremiosDisputados) {
-        this.GrandesPremiosDisputados = GrandesPremiosDisputados;
+        this.grandesPremiosDisputados = GrandesPremiosDisputados;
     }
 
     public int getPoles() {
@@ -107,10 +107,10 @@ public class Piloto {
                                      -Vueltas Rapidas: %s
                          
                                      **********************************
-                                   """.formatted(nombrePiloto, fechaNacimiento, titulos, victorias, GrandesPremiosDisputados, poles, vueltasRapidas);
+                                   """.formatted(nombrePiloto, fechaNacimiento, titulos, victorias, grandesPremiosDisputados, poles, vueltasRapidas);
 
         //return "Piloto{" + "nombrePiloto=" + nombrePiloto + ", equipo=" + equipo + ", fechaNacimiento=" + fechaNacimiento + 
-        //", titulos=" + titulos + ", victorias=" + victorias + ", GrandesPremiosDisputados=" + GrandesPremiosDisputados +
+        //", titulos=" + titulos + ", victorias=" + victorias + ", grandesPremiosDisputados=" + grandesPremiosDisputados +
         //", poles=" + poles + ", vueltasRapidas=" + vueltasRapidas + '}';
         return resultado;
 
@@ -124,7 +124,7 @@ public class Piloto {
         hash = 43 * hash + Objects.hashCode(this.fechaNacimiento);
         hash = 43 * hash + this.titulos;
         hash = 43 * hash + this.victorias;
-        hash = 43 * hash + this.GrandesPremiosDisputados;
+        hash = 43 * hash + this.grandesPremiosDisputados;
         hash = 43 * hash + this.poles;
         hash = 43 * hash + this.vueltasRapidas;
         return hash;

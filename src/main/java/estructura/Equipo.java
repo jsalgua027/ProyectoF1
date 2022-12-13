@@ -19,7 +19,7 @@ public class Equipo {
     private String jefeEquipo;
     private int titulos;
     private int victorias;
-    private int GrandesPremiosDisputados;
+    private int grandesPremiosDisputados;
     private int poles;
     private int vueltasRapidas;
 
@@ -33,7 +33,7 @@ public class Equipo {
         this.jefeEquipo = jefeEquipo;
         this.titulos = titulos;
         this.victorias = victorias;
-        this.GrandesPremiosDisputados = GrandesPremiosDisputados;
+        this.grandesPremiosDisputados = GrandesPremiosDisputados;
         this.poles = poles;
         this.vueltasRapidas = vueltasRapidas;
     }
@@ -87,11 +87,11 @@ public class Equipo {
     }
 
     public int getGrandesPremiosDisputados() {
-        return GrandesPremiosDisputados;
+        return grandesPremiosDisputados;
     }
 
     public void setGrandesPremiosDisputados(int GrandesPremiosDisputados) {
-        this.GrandesPremiosDisputados = GrandesPremiosDisputados;
+        this.grandesPremiosDisputados = GrandesPremiosDisputados;
     }
 
     public int getPoles() {
@@ -132,7 +132,7 @@ public class Equipo {
                   
                                    *****************************
                                    """.formatted(nombreEquipo,monoplazas,pilotos,
-                                           jefeEquipo, titulos,victorias,GrandesPremiosDisputados,
+                                           jefeEquipo, titulos,victorias,grandesPremiosDisputados,
                                            poles,vueltasRapidas);
         
         
@@ -144,7 +144,7 @@ public class Equipo {
 //        return "Equipo{" + "nombreEquipo=" + nombreEquipo + ", monoplazas=" +
 //                monoplazas + ", pilotos=" + pilotos + ", jefeEquipo=" 
 //                + jefeEquipo + ", titulos=" + titulos + ", victorias=" + victorias
-//                + ", GrandesPremiosDisputados=" + GrandesPremiosDisputados 
+//                + ", grandesPremiosDisputados=" + grandesPremiosDisputados 
 //                + ", poles=" + poles + ", vueltasRapidas=" + vueltasRapidas + '}';
     }
 
@@ -157,7 +157,7 @@ public class Equipo {
         hash = 89 * hash + Objects.hashCode(this.jefeEquipo);
         hash = 89 * hash + this.titulos;
         hash = 89 * hash + this.victorias;
-        hash = 89 * hash + this.GrandesPremiosDisputados;
+        hash = 89 * hash + this.grandesPremiosDisputados;
         hash = 89 * hash + this.poles;
         hash = 89 * hash + this.vueltasRapidas;
         return hash;
