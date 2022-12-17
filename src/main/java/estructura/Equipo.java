@@ -6,6 +6,8 @@ package estructura;
 
 import java.util.Arrays;
 import java.util.Objects;
+import listas.ListaMonoplazas;
+import listas.ListaPilotos;
 
 /**
  *
@@ -14,8 +16,8 @@ import java.util.Objects;
 public class Equipo {
 
     private String nombreEquipo;
-    private Monoplaza[] monoplazas;
-    private Piloto[] pilotos;
+    private ListaMonoplazas monoplazas;
+    private ListaPilotos pilotos;
     private String jefeEquipo;
     private int titulos;
     private int victorias;
@@ -26,14 +28,14 @@ public class Equipo {
     public Equipo() {
     }
 
-    public Equipo(String nombreEquipo, int tamanioMonoplazas, Piloto[] pilotos, String jefeEquipo, int titulos, int victorias, int GrandesPremiosDisputados, int poles, int vueltasRapidas) {
+    public Equipo(String nombreEquipo, String jefeEquipo, int titulos, int victorias, int grandesPremiosDisputados, int poles, int vueltasRapidas) {
         this.nombreEquipo = nombreEquipo;
-        this.monoplazas = crearArrayMonoplazas(tamanioMonoplazas);
-        this.pilotos = pilotos;
+        this.monoplazas = new ListaMonoplazas(0);
+        this.pilotos = new ListaPilotos(0);
         this.jefeEquipo = jefeEquipo;
         this.titulos = titulos;
         this.victorias = victorias;
-        this.grandesPremiosDisputados = GrandesPremiosDisputados;
+        this.grandesPremiosDisputados = grandesPremiosDisputados;
         this.poles = poles;
         this.vueltasRapidas = vueltasRapidas;
     }
@@ -42,132 +44,107 @@ public class Equipo {
         return nombreEquipo;
     }
 
-    public void setNombreEquipo(String nombreEquipo) {
-        this.nombreEquipo = nombreEquipo;
-    }
-
-    public Monoplaza[] getMonoplazas() {
+    public ListaMonoplazas getMonoplazas() {
         return monoplazas;
     }
 
-    public void setMonoplazas(Monoplaza[] monoplazas) {
-        this.monoplazas = monoplazas;
-    }
-
-    public Piloto[] getPilotos() {
+    public ListaPilotos getPilotos() {
         return pilotos;
-    }
-
-    public void setPilotos(Piloto[] pilotos) {
-        this.pilotos = pilotos;
     }
 
     public String getJefeEquipo() {
         return jefeEquipo;
     }
 
-    public void setJefeEquipo(String jefeEquipo) {
-        this.jefeEquipo = jefeEquipo;
-    }
-
     public int getTitulos() {
         return titulos;
-    }
-
-    public void setTitulos(int titulos) {
-        this.titulos = titulos;
     }
 
     public int getVictorias() {
         return victorias;
     }
 
-    public void setVictorias(int victorias) {
-        this.victorias = victorias;
-    }
-
     public int getGrandesPremiosDisputados() {
         return grandesPremiosDisputados;
-    }
-
-    public void setGrandesPremiosDisputados(int GrandesPremiosDisputados) {
-        this.grandesPremiosDisputados = GrandesPremiosDisputados;
     }
 
     public int getPoles() {
         return poles;
     }
 
-    public void setPoles(int poles) {
-        this.poles = poles;
-    }
-
     public int getVueltasRapidas() {
         return vueltasRapidas;
+    }
+
+    public void setNombreEquipo(String nombreEquipo) {
+        this.nombreEquipo = nombreEquipo;
+    }
+
+    public void setJefeEquipo(String jefeEquipo) {
+        this.jefeEquipo = jefeEquipo;
+    }
+
+    public void setTitulos(int titulos) {
+        this.titulos = titulos;
+    }
+
+    public void setVictorias(int victorias) {
+        this.victorias = victorias;
+    }
+
+    public void setGrandesPremiosDisputados(int grandesPremiosDisputados) {
+        this.grandesPremiosDisputados = grandesPremiosDisputados;
+    }
+
+    public void setPoles(int poles) {
+        this.poles = poles;
     }
 
     public void setVueltasRapidas(int vueltasRapidas) {
         this.vueltasRapidas = vueltasRapidas;
     }
 
-   // metodo para crear el array de monoplazas
-    public Monoplaza[] crearArrayMonoplazas  (int tamanio ){
-     this.monoplazas= new Monoplaza[tamanio];
-        for (int i = 0; i < monoplazas.length; i++) {
-            this.monoplazas[i]=new Monoplaza();
-        }
-        return this.monoplazas;
-    }
-    
-    
-   
     @Override
     public String toString() {
-        
-        
-//         String resultado
-//                = """
-//                                *********Equipo***********
-//                  
-//                                   -Nombre Equipo: %s
-//                                   -Monoplazas: %s
-//                                   -Pilotos: %s
-//                                   -Jefe de Equipo: %s
-//                                   -Titulos: %s
-//                                   -Victorias en Grandes Premios: %s
-//                                   -Poles: %s
-//                                   -Vueltas Rapidas: %s
-//                  
-//                                   *****************************
-//                                   """.formatted(nombreEquipo,monoplazas,pilotos,
-//                                           jefeEquipo, titulos,victorias,grandesPremiosDisputados,
-//                                           poles,vueltasRapidas);
-//        
-//        
-//        
-//        
-//        return resultado;
-        
-        
-        return "Equipo{" + "nombreEquipo=" + nombreEquipo + ", monoplazas=" +
-                monoplazas.toString() + ", pilotos=" + pilotos.toString() + ", jefeEquipo=" 
-                + jefeEquipo + ", titulos=" + titulos + ", victorias=" + victorias
-                + ", grandesPremiosDisputados=" + grandesPremiosDisputados 
-                + ", poles=" + poles + ", vueltasRapidas=" + vueltasRapidas + '}';
+
+        String resultado
+                = """
+                                *********EQUIPO: %s ***********
+                                                    
+                                   %s
+                                   %s
+                                   -Jefe de Equipo: %s
+                                   -Titulos: %s
+                                   -Victorias en Grandes Premios: %s
+                                   -Poles: %s
+                                   -Vueltas Rapidas: %s
+                  
+                                   *****************************
+                                   """.formatted(nombreEquipo, monoplazas, pilotos,
+                        jefeEquipo, titulos, victorias, grandesPremiosDisputados,
+                        poles, vueltasRapidas);
+
+        return resultado;
+
+//        return "Equipo{" + "nombreEquipo=" + nombreEquipo + ", monoplazas=" +
+//                Arrays.toString(monoplazas) + ", pilotos=" + Arrays.toString(pilotos) + ", jefeEquipo=" 
+//                + jefeEquipo + ", titulos=" + titulos + ", victorias=" + victorias
+//                + ", grandesPremiosDisputados=" + grandesPremiosDisputados 
+//                + ", poles=" + poles + ", vueltasRapidas=" + vueltasRapidas + '}';
     }
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 89 * hash + Objects.hashCode(this.nombreEquipo);
-        hash = 89 * hash + Arrays.deepHashCode(this.monoplazas);
-        hash = 89 * hash + Arrays.deepHashCode(this.pilotos);
-        hash = 89 * hash + Objects.hashCode(this.jefeEquipo);
-        hash = 89 * hash + this.titulos;
-        hash = 89 * hash + this.victorias;
-        hash = 89 * hash + this.grandesPremiosDisputados;
-        hash = 89 * hash + this.poles;
-        hash = 89 * hash + this.vueltasRapidas;
+        int hash = 7;
+        hash = 83 * hash + Objects.hashCode(this.nombreEquipo);
+        hash = 83 * hash + Objects.hashCode(this.monoplazas);
+        hash = 83 * hash + Objects.hashCode(this.pilotos);
+        hash = 83 * hash + Objects.hashCode(this.jefeEquipo);
+        hash = 83 * hash + this.titulos;
+        hash = 83 * hash + this.victorias;
+        hash = 83 * hash + this.grandesPremiosDisputados;
+        hash = 83 * hash + this.poles;
+        hash = 83 * hash + this.vueltasRapidas;
         return hash;
     }
 
@@ -185,12 +162,43 @@ public class Equipo {
         final Equipo other = (Equipo) obj;
         return Objects.equals(this.nombreEquipo, other.nombreEquipo);
     }
-    
-    
-    
-    
-    
-    
+
+    // añadir monoplaza
+    public void registraMonoplaza(Monoplaza m) {
+        this.monoplazas.añadirMonoplaza(m);
+
     }
 
+    // otra manera de añadir
+    public void registraMonoplaza() {
+        Monoplaza aux = new Monoplaza();
+        this.monoplazas.añadirMonoplaza(aux);
+    }
 
+    // registar Cliente
+    public void registarPiloto() {
+        Piloto aux = new Piloto();
+        this.pilotos.añadirPiloto(aux);
+
+    }
+
+    // registar Cliente
+    public void registarPiloto(Piloto aux) {
+        //  Cliente aux = new Cliente();
+        this.pilotos.añadirPiloto(aux);
+
+    }
+
+    // busca piloto
+    public Piloto buscarPiloto(String nombre){
+    return this.pilotos.buscarPilotoNombre(nombre);
+    
+    }
+    // buscar monoplaza 
+    
+    public Monoplaza buscarMonoplaza(String Bastidor){
+    return this.monoplazas.buscarMonoplazaBastidor(Bastidor);
+    
+    }
+    
+}

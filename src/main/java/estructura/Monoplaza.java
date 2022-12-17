@@ -30,13 +30,15 @@ public class Monoplaza {
     private  int unidades_control_electronico_EC;//=2;
     private  int mgu_k;//=3;
     private  int componentes_sistema_escape;//=8;
+    private int contador=0;
     
 
     public Monoplaza() {
     }
 
     public Monoplaza( Motor motor, Chasis chasis) {
-        this.numero_bastidor = RandomStringUtils.randomAlphanumeric(15);
+        contador++;
+        this.numero_bastidor = String.valueOf(contador);
         this.motor = motor;
         this.chasis = chasis;
         this.motores_ICE =3;
@@ -137,7 +139,7 @@ public class Monoplaza {
         
         
         String resultado="""
-                                      ******Monoplaza************
+                                      -----Monoplaza-----------
                          
                                     -Número de bastidor: %s
                                     -Motor: %s
@@ -149,7 +151,7 @@ public class Monoplaza {
                                     -Unidades de MGUK: %s
                                     -Componentes sistema de escape: %s
                          
-                                    *********************************************
+                                    ------------------------------------------------
                                    """.formatted(numero_bastidor,motor
                                            ,chasis,motores_ICE,mgu_h
                                    ,turboCompresores_TC,baterias_ES,unidades_control_electronico_EC

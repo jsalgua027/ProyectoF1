@@ -96,7 +96,7 @@ public class Piloto {
     public String toString() {
 
         String resultado = """
-                                     *********Piloto**************** 
+                                     ----Piloto-----------
                          
                                      -Nombre: %s
                                      -Fecha de Nacimiento: %s
@@ -106,7 +106,7 @@ public class Piloto {
                                      -Poles: %s
                                      -Vueltas Rapidas: %s
                          
-                                     **********************************
+                                     --------------------------------
                                    """.formatted(nombrePiloto, fechaNacimiento, titulos, victorias, grandesPremiosDisputados, poles, vueltasRapidas);
 
         //return "Piloto{" + "nombrePiloto=" + nombrePiloto + ", equipo=" + equipo + ", fechaNacimiento=" + fechaNacimiento + 

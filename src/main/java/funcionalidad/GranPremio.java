@@ -6,20 +6,29 @@ package funcionalidad;
 
 import estructura.Circuito;
 import estructura.Equipo;
-import java.util.Arrays;
 import java.util.Objects;
+
 
 /**
  *
  * @author jsalc
+ * 
+ *     
+    //*********************************METODOS*************************
+    
+    // método que señale el ganador y sume victoria a equipo y  piloto
+    // metodo que señale pole y le sume pole al equipo y piloto
+    // método que señale vuelta rápida y se la sume a los dos
+ * 
  */
 public class GranPremio {
     
     private Circuito circuito;
-    private estructura.Equipo[] equipos;
+    private Equipo[] equipos;
 
-    public GranPremio() {
-    }
+  
+    
+
 
     public GranPremio(Circuito circuito, Equipo[] equipos) {
         this.circuito = circuito;
@@ -30,39 +39,27 @@ public class GranPremio {
         return circuito;
     }
 
-    public void setCircuito(Circuito circuito) {
-        this.circuito = circuito;
-    }
-
     public Equipo[] getEquipos() {
         return equipos;
     }
 
-    public void setEquipos(Equipo[] equipos) {
-        this.equipos = equipos;
-    }
-
     @Override
     public String toString() {
-        
-        String resultado="""
-                                    Bienvenidos al Gran Premio de: %s
-                                    Los Equipos partizipantes son: %s
-                         
-                                   """.formatted(circuito,equipos);
-        
-        return resultado;
-//        return "GranPremio{" + "circuito=" + circuito + ", equipos=" + equipos + '}';
+        StringBuilder sb = new StringBuilder();
+        sb.append("GranPremio{");
+        sb.append("circuito=").append(circuito);
+        sb.append(", equipos=").append(equipos);
+        sb.append('}');
+        return sb.toString();
     }
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 71 * hash + Objects.hashCode(this.circuito);
-        hash = 71 * hash + Arrays.deepHashCode(this.equipos);
+        int hash = 3;
+        hash = 89 * hash + Objects.hashCode(this.circuito);
         return hash;
     }
-// son iguales por el nombre del circuito 
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -77,13 +74,6 @@ public class GranPremio {
         final GranPremio other = (GranPremio) obj;
         return Objects.equals(this.circuito, other.circuito);
     }
-    
-    
-    //*********************************METODOS*************************
-    
-    // método que señale el ganador y sume victoria a equipo y  piloto
-    // metodo que señale pole y le sume pole al equipo y piloto
-    // método que señale vuelta rápida y se la sume a los dos
     
     
     
