@@ -89,8 +89,8 @@ public class GranPremio extends CampeonatoF1{
     public void victoriaPilotoGanador(Equipo e,Piloto p) {
         for (int i = 0; i < this.equipos.length; i++) {
             if(this.equipos[i].equals(e)){
-                for (int j = 0; j < e.getPilotos().getNumeroPilotos(); j++) {
-                    
+                for (int j = 0; j < this.equipos[i].getPilotos().getNumeroPilotos(); j++) {
+                    p.setVictorias(+1);
                 }
             }
         }
@@ -98,22 +98,42 @@ public class GranPremio extends CampeonatoF1{
 
     @Override
     public void poleEquipoGanador(Equipo e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+     for (Equipo equipo : this.equipos) {
+            if (equipo.equals(e)) {
+                e.setPoles(+1);
+            }
+        }
     }
 
     @Override
     public void polePilotoGanador(Equipo e,Piloto p) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+       for (int i = 0; i < this.equipos.length; i++) {
+            if(this.equipos[i].equals(e)){
+                for (int j = 0; j < this.equipos[i].getPilotos().getNumeroPilotos(); j++) {
+                    p.setPoles(+1);
+                }
+            }
+        }
     }
 
     @Override
     public void vueltaRapidaEquipoGanador(Equipo e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+       for (Equipo equipo : this.equipos) {
+            if (equipo.equals(e)) {
+                e.setVueltasRapidas(+1);
+            }
+        }
     }
 
     @Override
     public void vueltaRapidaPilotoGanador(Equipo e,Piloto p) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+         for (int i = 0; i < this.equipos.length; i++) {
+            if(this.equipos[i].equals(e)){
+                for (int j = 0; j < this.equipos[i].getPilotos().getNumeroPilotos(); j++) {
+                    p.setVueltasRapidas(+1);
+                }
+            }
+        }
     }
 
    
