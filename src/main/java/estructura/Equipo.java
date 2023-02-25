@@ -30,8 +30,8 @@ public class Equipo {
 
     public Equipo(String nombreEquipo, String jefeEquipo, int titulos, int victorias, int grandesPremiosDisputados, int poles, int vueltasRapidas) {
         this.nombreEquipo = nombreEquipo;
-        this.monoplazas = new ListaMonoplazas(0);
-        this.pilotos = new ListaPilotos(0);
+        this.monoplazas = new ListaMonoplazas();
+        this.pilotos = new ListaPilotos();
         this.jefeEquipo = jefeEquipo;
         this.titulos = titulos;
         this.victorias = victorias;

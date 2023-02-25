@@ -17,11 +17,11 @@ public class ListaMonoplazas {
     Monoplaza[] listaMonoplazas;
 
     // constructor de la lista de pilotos
-    public ListaMonoplazas(int tamanio) {
+    public ListaMonoplazas() {
 
-        tamanio = Math.abs(tamanio);
-        this.numeroMonoplzas = tamanio;
-        this.listaMonoplazas = new Monoplaza[tamanio];
+     
+        this.numeroMonoplzas = 2;
+        this.listaMonoplazas = new Monoplaza[numeroMonoplzas];
         for (int i = 0; i < listaMonoplazas.length; i++) {
             this.listaMonoplazas[i] = new Monoplaza();
         }

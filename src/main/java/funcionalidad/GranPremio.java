@@ -6,6 +6,7 @@ package funcionalidad;
 
 import estructura.Circuito;
 import estructura.Equipo;
+import estructura.Piloto;
 import java.util.Objects;
 
 
@@ -21,7 +22,7 @@ import java.util.Objects;
     // método que señale vuelta rápida y se la sume a los dos
  * 
  */
-public class GranPremio {
+public class GranPremio extends CampeonatoF1{
     
     private Circuito circuito;
     private Equipo[] equipos;
@@ -74,6 +75,48 @@ public class GranPremio {
         final GranPremio other = (GranPremio) obj;
         return Objects.equals(this.circuito, other.circuito);
     }
+
+    @Override
+    public void victoriaEquipoGanador(Equipo e) {
+        for (Equipo equipo : this.equipos) {
+            if (equipo.equals(e)) {
+                e.setVictorias(+1);
+            }
+        }
+    }
+
+    @Override
+    public void victoriaPilotoGanador(Equipo e,Piloto p) {
+        for (int i = 0; i < this.equipos.length; i++) {
+            if(this.equipos[i].equals(e)){
+                for (int j = 0; j < e.getPilotos().getNumeroPilotos(); j++) {
+                    
+                }
+            }
+        }
+    }
+
+    @Override
+    public void poleEquipoGanador(Equipo e) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void polePilotoGanador(Equipo e,Piloto p) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void vueltaRapidaEquipoGanador(Equipo e) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void vueltaRapidaPilotoGanador(Equipo e,Piloto p) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+   
     
     
     

@@ -10,6 +10,6 @@ package estructura;
  */
 public enum Chasis {
     
-    W13, RD18, MCL36,AMR22,A522, F1_75,AT03,C42,VF_22,FW44;
+    SF_23, RB19,W_14,A_523,MCL60, AMR23, C43,AT04,  FW45,VF_23;
     
 }

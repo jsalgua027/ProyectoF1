@@ -22,8 +22,8 @@ public class Pruebas {
           Piloto fernando =new Piloto("Fernado Alonso",LocalDate.of(1981, Month.JULY, 29), 2, 32, 356, 22,23);
            Piloto ocon = new Piloto("Esteban Ocon", LocalDate.of(1996, Month.SEPTEMBER, 17),0, 0, 111, 0, 0);
            
-           Monoplaza m1 = new Monoplaza(Motor.RENAULT, Chasis.A522);
-           Monoplaza m2 = new Monoplaza(Motor.RENAULT, Chasis.A522);
+           Monoplaza m1 = new Monoplaza(Motor.RENAULT, Chasis.A_523);
+           Monoplaza m2 = new Monoplaza(Motor.RENAULT, Chasis.A_523);
 
        
         Equipo alpine = new Equipo("ALPINE", "Eric baser", 0, 1, 41, 0, 1);

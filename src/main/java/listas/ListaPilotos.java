@@ -17,11 +17,11 @@ public class ListaPilotos {
     Piloto[] listaPilotos;
 
     // constructor de la lista de pilotos
-    public ListaPilotos(int tamanio) {
+    public ListaPilotos() {
 
-        tamanio = Math.abs(tamanio);
-        this.numeroPilotos = tamanio;
-        this.listaPilotos = new Piloto[tamanio];
+    
+        this.numeroPilotos =3;
+        this.listaPilotos = new Piloto[numeroPilotos];
         for (int i = 0; i < listaPilotos.length; i++) {
             this.listaPilotos[i] = new Piloto();
         }
