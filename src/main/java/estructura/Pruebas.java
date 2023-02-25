@@ -26,7 +26,7 @@ public class Pruebas {
         Piloto fernando = new Piloto("Fernado Alonso", LocalDate.of(1981, Month.JULY, 29), 2, 33, 356, 0, 0);
         Piloto ocon = new Piloto("Esteban Ocon", LocalDate.of(1996, Month.SEPTEMBER, 17), 0, 0, 111, 0, 0);
 
-        Monoplaza m1 = new Monoplaza(Motor.HONDA, Chasis.C43);
+        Monoplaza m1 = new Monoplaza(Motor.RENAULT, Chasis.A_523);
         Monoplaza m2 = new Monoplaza(Motor.RENAULT, Chasis.A_523);
 
         Equipo alpine = new Equipo("ALPINE", "Eric baser", 0, 4, 41, 0, 0);
@@ -44,11 +44,12 @@ public class Pruebas {
 
         mercedes.registarPiloto(hamilton);
         mercedes.registarPiloto(russel);
-        alpine.registraMonoplaza(mer1);
-        alpine.registraMonoplaza(mer2);
+        mercedes.registraMonoplaza(mer1);
+        mercedes.registraMonoplaza(mer2);
 
         System.out.println("Imprimo a los equipos y fernado sin tocar las victorias, ahora tienen que estar a cero");
          System.out.println(alpine.toString());
+         System.out.println(mercedes.toString());
        
         
      
@@ -62,9 +63,9 @@ public class Pruebas {
       
         granPremioBarei.victoriaPilotoGanador(alpine, fernando);
         
-          System.out.println("Imprimo a los equipos y fernado sumando una vitoria, ahora tienen que estar a cero");
-        System.out.println(alpine.toString());
-      
+//          System.out.println("Imprimo a los equipos y fernado sumando una vitoria, ahora tienen que estar a cero");
+//        System.out.println(alpine.toString());
+//      
        
 
     }

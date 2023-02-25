@@ -30,7 +30,8 @@ public class Monoplaza {
     private  int unidades_control_electronico_EC;//=2;
     private  int mgu_k;//=3;
     private  int componentes_sistema_escape;//=8;
-    private int contador=0;
+    private static 
+            int contador=0;
     
 
     public Monoplaza() {
