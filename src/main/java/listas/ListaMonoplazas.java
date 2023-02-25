@@ -20,7 +20,7 @@ public class ListaMonoplazas {
     public ListaMonoplazas() {
 
      
-        this.numeroMonoplzas = 2;
+        this.numeroMonoplzas = 0;
         this.listaMonoplazas = new Monoplaza[numeroMonoplzas];
         for (int i = 0; i < listaMonoplazas.length; i++) {
             this.listaMonoplazas[i] = new Monoplaza();

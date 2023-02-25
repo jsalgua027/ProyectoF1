@@ -20,7 +20,7 @@ public class ListaPilotos {
     public ListaPilotos() {
 
     
-        this.numeroPilotos =3;
+        this.numeroPilotos =0;
         this.listaPilotos = new Piloto[numeroPilotos];
         for (int i = 0; i < listaPilotos.length; i++) {
             this.listaPilotos[i] = new Piloto();
